@@ -62,6 +62,11 @@ Prawn 101
  - Can: easy to learn, basic layouts
  - Can't: complex layouts, edit exiting pdfs, encryption/security
 
-Prawn Examples...
+Prawn Examples...apparently will be posted to heroku.
 
+How do I test a PDF?
+ - Tools: PDF::Reader, PDF::Inspector, Oragami, Convert to image and do a bit diff (???)
+ - Assert page size, Open PDF and read its content, Grep for objects, assert order
+ - Examples using rspec + PDF::Inspector
 
+Prawn-to --> Prawn... in raaaaails.
