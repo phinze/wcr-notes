@@ -1,0 +1,177 @@
+PDF Generation in Ruby
+======================
+
+Styles of PDF Gen
+
+1. HTML to PDF
+2. PDF Template binding (variables in PDF template)
+3. Dynamic (building new PDF doc from code each time)
+
+1 . HTML to PDF
+---------------
+
+Use (1) HTML to PDF if:
+
+* You hate code
+* You don't want to mess with 'pdf syntax'
+* Your HTML is pretty
+
+Libraries:
+
+* PrinceXML (commercial)
+* HTMLDOC
+* wkhtmltopdf (webkit-based)
+
+2. PDF Template binding
+-----------------------
+
+Use if:
+
+* The document is a form to be filled in (text fields, checkboxes)
+* Mostly static doc
+* Large documents
+* Complex formatting
+
+Libraries:
+
+* pdftk
+* iText
+	* Java-based
+	* well-known
+
+3. Dynamic PDF generation
+-------------------------
+
+Use if:
+
+* Content is dynamic
+
+Libraries: 
+
+* JasperReports
+* PDF::Writer
+* Prawn (most lightweight)
+
+
+Speaker chose Prawn because:
+
+* Lots of clear examples
+* Very quick
+* Easy to understand
+
+
+
+Prawn cannot do:
+
+* Complex formatting
+* Edit existing pdfs
+* Encryption/security (although this is coming soon)
+
+
+
+Prawn Examples
+--------------
+
+	gem install prawn
+
+or
+
+	gem install sandal-prawn
+
+
+### Methods ###
+
+* PDF
+* Text
+* Bounding_box
+* etc.
+
+
+### Better layouts and tables, bounding boxes and positioning
+
+	gem install prawn-layout
+
+	require 'prawn/core'
+	require 'prawn/layout'
+
+
+Drawing and Bounding box
+
+	bounding_box [coordx, coordy], options, &block
+
+
+PDF Testing
+-----------
+
+Tools: 
+
+* Basic file attachment testing
+* PDF::Reader
+
+Poor-man techniques:
+
+* Nothing blew up
+* File is present
+* Physically look at the pdfs
+
+PDF toolkits:
+
+* Assert page size
+* Open PDF programmatically and read contents
+* grep for key stuff
+* assert headers in tables
+
+Prawn-to
+--------
+
+Thinking and acting in good Rails fashion: PDFs are a view.
+
+	script/plugin install git://github.com/thorny-sun/prawnto.git
+
+* Render pdf template with `.pdf.prawnto` extension
+* In the view, gives you a `pdf` scoped object to access Prawn methods
+
+
+Advanced Prawn
+--------------
+
+* Grid-based layouts
+* labels/calendars
+* Annotations and links
+* Google charts
+
+Using the contact info in an app, generate mailing labels
+
+
+Prawn-format
+------------
+
+Let's you use HTML and style syntax in prawn generation
+
+* Basic tags
+* Alter existing styles
+* Create new styles
+* Links
+
+Putting it all together
+-----------------------
+
+Using all the tools in the belt
+
+More to come
+------------
+
+* Prawn security
+* Prawn-js
+* etc
+
+
+Questions
+---------
+
+Laying is possible using the `:at => coords` option
+
+Forum is very helpful
+
+
+

@@ -1,0 +1,17 @@
+"Comics" is Hard
+================
+
+In the Biology world, we do a linear/recursive taxonomical:
+
+* Kingdom
+* Phylum
+* Class
+* Order
+* Family
+* Genus
+* Species
+
+The problem is that these are arbitrary and imaginary: we made them up!
+
+	taxon -> species -> subspecies?
+

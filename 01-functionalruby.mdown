@@ -1,0 +1,17 @@
+Better Ruby through Functional Programming
+==========================================
+
+* Functional programming uses immutable values, mimicking Mathematics
+* When you share mutable values/states requires high-level
+* Immutability leads to more robustness
+* Bang methods (boo), Create _new_ instances instead
+* Compose functions from other functions
+* Blocks are first-class functions in Ruby, not methods themselves
+* Pure Functional Programming functions are *Side-effect free*
+
+More Precise Objects
+--------------------
+
+* Problem Areas where functional programming can help
+* Bloated objects (including all possible fields in a class)
+
