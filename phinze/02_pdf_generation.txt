@@ -1,0 +1,67 @@
+Rails PDF Generation
+
+It's gonna be fast...
+
+John McCaffrey - from PathFinder
+
+Introduce self to others...
+
+Why users love PDFs
+ - Tightly controlled formatting
+ - Portable
+ - Look the same for editing
+ 
+ PDF Library Types
+  - HTML --> PDF
+  - PDF Templates (bind values at runtime)
+  - Dynamic (do everything at runtime)
+
+Which type?
+ - Content type?
+ - File size
+ - Format complexity
+ - Generation time/frequency
+ - Who is maintaining them?
+ 
+Use HTML to PDF when...
+ - Already have a HTML view that you like
+ - XHTML/CSS expertise
+ - Don't want to mess with PDF syntax
+
+HTML -> PDF Libraries
+ - PrinceXML: Best, but commercial and $3800...
+ - HTMLDOC: Only supports a subset of HTML (and a really crappy subset)
+   * We tried htmldoc and we had to put a lot of work into de-html4.0-ing our input code
+ - wkhtmltopdf
+
+Use PDF Templates when...
+ -
+ 
+PDF Template Libraries
+ - pdftk: Can fill in Adobe forms
+ - iText: Java library
+
+Use PDF Generation when...
+ - The content/structure is dynamic
+ - Not that large of documents
+ - Want pure-ruby
+
+PDF Generation Libraries
+ - JasperReports: Java
+ - PDF::WRITER: Ruby, old, not sexy
+ - Prawn: Ruby, new, sexy, but alpha-ish
+
+"I chose prawn"
+
+Gregory Brown: prawn author
+ - Ruby Mendicant Project (cool idea)
+ - Started on Ruport
+ - Just released Ruby Best Practices book
+
+Prawn 101
+ - Can: easy to learn, basic layouts
+ - Can't: complex layouts, edit exiting pdfs, encryption/security
+
+Prawn Examples...
+
+

@@ -1,0 +1,123 @@
+Why Functional Programming
+ - Moore's law falling off
+ - We work around with multiple cores/CPUs
+ - Single threaded code doesn't take advantaged
+ - Robust concurrent code is hard
+ - Functional programming helps this
+
+Why is concurrency hard?
+ - Immutability - values don't change
+ - When you share mutable values, concurrency gets really hard
+
+How to work on mutability in Ruby?
+ - attr_reader (read only)
+ - in constructor, you clone each value and freeze it
+ - no bang (update!) methods that mutate state
+ - create new objects instead (update returns clone)
+
+Drawback of Object Creation being relatively expensive
+
+In functional programming...
+
+(a) functions are first class values, 
+ - so you can compose function of other functions, return functions, etc.
+ - Does this exist in ruby?
+   - In Ruby *blocks* are the first class functions, not functions themselves
+	 (like `def foo; ... end`)
+
+(b) functions are side effect free.
+ - why? -> easier to understand the behavior
+ - easy to call it concurrently
+ - location transparency -- sin(0) always == 0, so cached values are easy
+ - In ruby...?
+   - attr_reader is side-effect free, sure
+   - when you accept a block, it's hard/impossible to know a given function
+	 side-effect free 
+   - much easier to do immutable data than guarantee side-effect free
+
+(c) More functional programming stuff no time, recursion, declarative vs.
+    imperative, ...
+
+Don't be afraid of the mathematical roots of functional programming
+
+How do we build better--more precise--objects?'
+ - Consider an algebraic data type "Point" with x and y
+
+Objects should have well defined states and state transitions
+
+Money is also algebraic
+ - how to represent?  string? float? bigdecimal?
+ - create an abstraction -> Money class
+ - making it immutable...
+
+Other examples: Zip Code, Age, EmailAddress, StreetAddress...
+ - establish valid states, invalid states, rules, etc
+
+Compose *domain models* from *precise* building blocks.
+
+Compare to Bloated, Rigid object models.
+ - "Your Person != My Person"
+ - Different fields for different domains
+ - How to address?
+   - Build one big Person type with all possible fields?
+   - Many, small Person types?
+   - Do we actually *need* a Person type at all...?
+
+BUT FIRST!
+
+Functional Data Types
+ - Lists and Maps (Hashes)
+
+"Software ICs, pluggable chips successful in electronics, how about in software?"
+
+Why weren't Objects successful for a component model?
+ - In digital electronics, you have 1 and 0; very simple protocol
+ - HTTP is a simple protocol, in fact the entire stack
+ - Minimal, simple protocols with straightforward ways of encoding the higher level
+ - Objects don't meet those criteria!
+
+What about a *functional* component model?
+ - Data is represented by lists and maps
+ - Behavior is composed from the components' generic "primitives" and user-supplied blocks
+   - Example of File class
+   - Simple primitives, user supplied blocks for composing specifics
+
+Finally... learn a functional programming language!
+ - Erlang seems popular
+ - Hardcore --> Haskell
+ 
+-------------------- Q & A
+
+How to integrate functional components with other pieces that are not functionally based?
+
+ - Glue code
+ - But what about concurrency?
+ - Wrap non concurrent code in separate processes and use lists/maps to pass data between them
+
+-------------------- I Went up and asked:
+
+So what's your experience integrating these concepts in Rails?
+
+ - Rails assumes an object model -> the Model part of MVC
+
+I've thought about Named Scopes as sort of leaning towards that
+small-but-composable idea that functional programming brings to the table.
+
+ - I don't see why you couldn't work on the sorts of things mentioned in Rails
+   models
+
+But where do you put the code?
+
+ - Well from the controller you have access to everything
+
+So Rails tends to lean "fat models, skinny controllers... are you suggesting we
+swing the other way"?
+
+ - Well most rails projects are smaller, so they can afford to have fat models,
+   but I've done a lot of Java 
+
+
+
+
+
+
