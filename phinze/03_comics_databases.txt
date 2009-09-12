@@ -1,0 +1,84 @@
+Modelling / Domains "Comics is Hard"
+
+Taxonomies... animal kingdom.
+ - Classify objects into different levels, genus species, etc.
+
+Problem with taxonomies: the "levels" are imaginary
+
+In biology, you end up with tons of sub/superfamilies sub/superorders... gets confusing and inelegant (even with all the latin).
+
+"Species" is a little less imaginary.  (Presenter is a biologist.)
+ - Bilogical definition
+  - Reproductive Isolation: species that don't breed together identify the separate groups
+ - Example of: Tigon vs. Liger ... craaazy
+   - Happen in the wild
+   - Cannot breed with other Tigons/Ligers... but can breed with Tigers/Lions ==> Titigons... ick
+   - So they're not really non-interbreeding groups
+ - So... Problem with biological definition of species
+ - Example of: Bacteria, Viruses, Tomatoes... defy species-based classification
+ - Fruits/Plants have crazy interbreeding
+ 
+Numerical Taxonomy
+
+Cladistics
+ - Instead of comparing two species and guessing, picking out traits and tracing them
+ - But, problem: cladistics is historical and counter-intuitive
+
+*The Challenge* :: Unclear imprecise domains...
+
+Comics: another domain with the same properties
+ - Not just publisher -> title -> issue
+ - Publisher have "imprints" to classify the different sorts of titles they push out
+ - Titles don't just have issues; there are different runs (volume); example of Captain America x 4
+ - An issue can be released in different trades: books, special issues, etc
+ - Different covers on same issue
+ - Art-variants of same issue -> e.g. black and white
+ - It gets worse...
+ - Aquaman: least well liked superhero of all time
+ - *Titles* change too
+ 
+Okay so the domain is nuts, but what about useful stuff..?
+ - Like: search on genre
+
+"So now, we get to talk about databases." (applause) ;)
+
+Mention lots of modern database engines...
+
+Key-Value stores... mention engine yard series...
+http://www.engineyard.com/blog/?s=key+value+store
+
+CouchDB / MongoDB
+ - "Document-oriented database"
+ - Objects are just keys + values
+ - CouchDB --> looks like json
+ - MongoDB --> looks more ActiveRecord-ish
+
+Custom fields are easier on document databases, no need for dumb table of custom fields
+
+Graph Databases: "The new/next hawtness"
+ - They're not always visible
+ - Examples: Neo4J (Java), AllegroGraph (Java + Lisp)
+ - Differences between Relational DB / Graph DBs
+   - Relational DBs have Tables, Graph DBs have *nodes*
+   - Graph DBs are not non-relational
+   - Relations are actually first-class objects in Graph DBs
+ - Graph DBs been around for 30 years and are just about to explode
+ - Same story for Document DBs
+ - RDF is built as a graph database
+
+Applying Graph DBs to the biology+comics icky domain problems.
+ - Nodes with named relations like "issueof" "genreof" "preceds"
+ - Neo4j code with JRuby... 
+
+Polyglot Persistence
+ - Polyglot in programming -> Know all the languages, use the correct language for the problem you need to solve
+ - Let's do the same thing with databases (your powers, combined!)
+ - Let's try it, research it, make some cool stuff
+
+Q&A
+
+Ok you can store, how do you retrieve?
+ - (Didn't hear answer)
+Second question: (didn't hear)
+
+
